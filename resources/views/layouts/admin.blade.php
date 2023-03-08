@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- plugins:css -->
+  <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin/vendors/base/vendor.bundle.base.css') }}">
   <!-- endinject -->
@@ -21,14 +22,15 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" />
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    @livewireStyles
+  <!-- Styles -->
+  <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+  @livewireStyles
 </head>
+
 <body>
 
   <div class="container-scroller">
@@ -45,20 +47,22 @@
     </div>
   </div>
 
-<!-- plugins:js -->
-<script src="{{ asset('admin/vendors/base/vendor.bundle.base.js') }}"></script>
-<script src="{{ asset('admin/vendors/datatables.net/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
-<!-- inject:js -->
-<script src="{{ asset('admin/js/off-canvas.js') }}"></script>
-<script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
-<script src="{{ asset('admin/js/template.js') }}"></script>
-<!-- Custom js for this page-->
-<script src="{{ asset('admin/js/dashboard.js') }}"></script>
-<script src="{{ asset('admin/js/data-table.js') }}"></script>
-<script src="{{ asset('admin/js/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('admin/js/dataTables.bootstrap4.js') }}"></script>
-<!-- End custom js for this page-->
-@livewireScripts
+  <!-- plugins:js -->
+  <script src="{{ asset('admin/vendors/base/vendor.bundle.base.js') }}"></script>
+  <script src="{{ asset('admin/vendors/datatables.net/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
+  <!-- inject:js -->
+  <script src="{{ asset('admin/js/off-canvas.js') }}"></script>
+  <script src="{{ asset('admin/js/hoverable-collapse.js') }}"></script>
+  <script src="{{ asset('admin/js/template.js') }}"></script>
+  <!-- Custom js for this page-->
+  <script src="{{ asset('admin/js/dashboard.js') }}"></script>
+  <script src="{{ asset('admin/js/data-table.js') }}"></script>
+  <script src="{{ asset('admin/js/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('admin/js/dataTables.bootstrap4.js') }}"></script>
+  <!-- End custom js for this page-->
+  @livewireScripts
+  @stack('script')
 </body>
+
 </html>
