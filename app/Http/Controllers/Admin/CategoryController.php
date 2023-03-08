@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         $category = new Category;
         $category->name = $validatedData['name'];
-        $category->slug = Str::slug($validatedData['name']);
+        $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
 
         if ($request->hasFile('image')) {
@@ -45,7 +45,7 @@ class CategoryController extends Controller
         $category->status = $request->status == true ? '1' : '0';
         $category->save();
 
-        return redirect('admin/category')->with('message', 'Category Added Successfully');
+        return redirect('admin/category')->with('message', 'Category Updated Successfully');
     }
 
     public function edit(Category $category)
@@ -56,18 +56,19 @@ class CategoryController extends Controller
     public function update(CategoryFormRequest $request, $category)
     {
         $validatedData = $request->validated();
-
         $category = Category::findOrFail($category);
+
         $category->name = $validatedData['name'];
         $category->slug = Str::slug($validatedData['name']);
         $category->description = $validatedData['description'];
 
-        $path = 'uploads/category/' . $category->image;
-        if (File::exists($path)) {
-            File::delete($path);
-        }
+        // if (File::exists($path)) {
+        //     File::delete($path);
+        // }
 
         if ($request->hasFile('image')) {
+            $path = 'uploads/category/' . $category->image;
+            FIle::delete($path);
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = time() . '.' . $ext;
