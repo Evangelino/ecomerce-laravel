@@ -10,19 +10,22 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="">Brand Name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" wire:model.defer="name" class="form-control">
+                        @error('name') <small class="text-danger">{{ $message }}</small>@enderror
                     </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="">Brand Slug</label>
-                        <input type="text" class="form-control">
+                        <input type="text" wire:model.defer="slug" class="form-control">
+                        @error('slug') <small class="text-danger">{{ $message }}</small>@enderror
                     </div>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="">Status</label><br>
-                        <input type="checkbox"> Checked=Hidden, Unchecked = Visible
+                        <input type="checkbox" wire:model.defer="status"> Checked=Hidden, Unchecked = Visible
+                        @error('status') <small class="text-danger">{{ $message }}</small>@enderror
                     </div>
                 </div>
                 <div class="modal-footer">
