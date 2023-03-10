@@ -36,3 +36,13 @@
         </div>
     </div>
 </div>
+
+@push('script')
+
+<script>
+    window.addEventListener('close-modal', event => {
+        $('#addBrandModal').modal('hide');
+    });
+</script>
+
+@endpush
