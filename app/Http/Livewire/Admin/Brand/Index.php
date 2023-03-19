@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin\Brand;
 
 use App\Models\Brand;
 use Livewire\Component;
-use Str;
+use Illuminate\Support\Str;
 
 class Index extends Component
 {
@@ -34,7 +34,7 @@ class Index extends Component
             'name' => $this->name,
             // 'slug' => $this->slug,
             'slug' => $this->Str::slug($this->slug),
-            'status' => $this->status == true ? '1' : '0',
+            'status' => $this->status == true ? '1' : '0'
         ]);
 
         session()->flash('message', 'Brand added Succesfully');
